@@ -1,0 +1,20 @@
+{
+  "name": "node_package",
+  "version": "1.0.0",
+  "description": "my node package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "git": "bash ./git.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seongdong2/codeingtest.git"
+  },
+  "author": "dong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seongdong2/codeingtest/issues"
+  },
+  "homepage": "https://github.com/seongdong2/codeingtest#readme"
+}
