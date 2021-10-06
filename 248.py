@@ -21,14 +21,20 @@ def di(start):
     heapq.heappush(q, (0, start))
     distance[start]=0
     while q:
+        #최단거리가 짧은 노드에 대한 정보 꺼내기
         dist, now = heapq.heappush(q)
-        if distance[now] < dis :
+        
+        #현재 노드가 이미 처리된 적이 있는 노드라면 무시
+        if distance[now] < dist :
             continue
 
         for i in gragh[now]:
             cost = dist + i[1]
+
+            #현재 노드를 거쳐서 다음 노드로 가는게, 다른 노드로 이동하는 거리가 더 짧은 경우
             if cost < distance[i[0]]:
                 distance[i[0]] = cost
+                #정리하려는 게 아니라, 단순히 최단 거리로 계산된 cost값을 q의 i[0]번째 노드에 넣어주는 과정이다.
                 heapq.heappush(q, (cost, i[0]))
 
 di(start)
