@@ -13,6 +13,7 @@ gragh = [[] for i in range(n+1)]
 
 visited = [False] * (n+1)
 #방문한 적이 있는지 체크하는 목적의 리스트 만들기
+#우선큐와 다른 부분 
 
 distance = [Inf]*(n+1)
 #최단 거리 테이블을 모두 무한으로 초기화
@@ -20,6 +21,7 @@ distance = [Inf]*(n+1)
 #모든 간선 정보 입력받기 
 for _ in range(m) :
     a, b, c = map(int, input().split())
+    #a번 노드에서 b번 노드로 가는 비용이 c라는 의미
     gragh[a].append((b, c))
 
 #방문하지 않은 노드 중에, 가장 최단 거리가 짧은 노드 번호를 반환
@@ -37,6 +39,7 @@ def di(start):
     #시작 노드에 대해서 초기화
     
     visited[start] = True
+    #distance의 a노드에서 b노드까지가는 거리 값
     for j in gragh[start] :
         distance[j[0]] = j[1]
 
