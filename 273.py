@@ -1,8 +1,8 @@
-#부모 노드 찾아가기
+#부모 노드로 루트 노드까지 빠르게 찾아 내기
 def find(parent, x):
     if parent[x] != x:
-        return find(parent, parent[x])
-    return x
+        parent[x] = find(parent, parent[x])
+    return parent[x]
 
 #노드의 부모노드 통합/갱신하기
 def uni_parent(parent, a, b):
@@ -22,7 +22,7 @@ for i in range(v+1):
     parent[i]=i
 
 #a, b 는 뭘까?
-for i in range(e+1):
+for i in range(e):
     a, b = map(int, input().split())
     uni_parent(parent, a, b)
 
