@@ -1,4 +1,4 @@
-#부모 노드로 루트 노드까지 빠르게 찾아 내기
+#부모 노드로 루트까지 빠르게 찾아 내기
 def find(parent, x):
     if parent[x] != x:
         parent[x] = find(parent, parent[x])
