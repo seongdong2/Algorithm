@@ -1,10 +1,15 @@
 n = int(input())
 array = list(map(int, input().split()))
-count = 0
-if n %max(array) != 0:
-    count += n//max(array) + 1
+array.sort()
 
-else : 
-    count += n//max(array)
+
+count = result = 0
+for i in array :
+    result +=1
+    if result == i :
+        count += 1
+        result = 0
+
+    
 
 print(count)
