@@ -25,7 +25,7 @@ result = 0
 
 for _ in range(e):
     a, b, cost = map(int, input().split())
-    edges.append(a, b, cost)
+    edges.append(cost, a, b)
 
 #간선을 비용이 적은 순으로 정리
 edges.sort()
