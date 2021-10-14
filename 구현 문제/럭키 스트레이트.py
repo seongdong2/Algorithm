@@ -7,7 +7,7 @@ rst = 0
 for i in range(length//2):
     rst += int(n(i))
 
-for j in range(mid, len(n)):
+for j in range(length//2, len(n)):
     rst -= int(n[i])
 
 
