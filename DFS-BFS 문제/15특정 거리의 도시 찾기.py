@@ -1,16 +1,22 @@
+def dfs(array, x, visited):
+    if 
+    visited[x] = True
+    for i in array[x]:
+        if not visited[i]:
+            dfs(array, i, visited)
+        
+
+
+
+
 n, m, k, x = map(int, input().split())
-visited = [False]*9
+visited = [False]*n
 
 array = []
 for _ in m :
     array.append(map(int, input().split()))
 
-
-def dfs(array, x, visited):
-    visited[x] = True
-    for i in array[x]:
-        if not visited[i]:
-            dfs(array, i, visited)
+dfs(array, x, visited)
 
 
 
