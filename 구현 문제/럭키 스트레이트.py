@@ -1,20 +1,17 @@
 #import sys
 #input = sys.stdin.readline
-n = list(map(int, input()))
-rst_l = rst_r = 0
+n = input()
+length = len(n)
+rst = 0
 
-mid = len(n)//2
-for i in range(mid):
-    rst_r += n[i]
+for i in range(length//2):
+    rst += int(n(i))
 
 for j in range(mid, len(n)):
-    rst_l += n[j]
-
-print(rst_l)
-print(rst_r)
+    rst -= int(n[i])
 
 
-if rst_l == rst_r :
+if rst == 0 :
     print('LUCKY')
 else : 
     print('READY')
