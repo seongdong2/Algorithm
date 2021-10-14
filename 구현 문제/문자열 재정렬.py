@@ -1,17 +1,17 @@
-n = input()
-length = len(n)
+data = input()
+rst = []
+v = 0
 
-a = []
-b = 0
-
-for i in range(length) : 
-    if type(n[i]) is str :
-        a.append(ord(n[i]))
+for i in data : 
+    if i.isalpha() :
+        rst.append(i)
     else : 
-        print(n[i])
-        b += int(n[i])
+        v += int(i)
 
-print(a)
-print(b)
+rst.sort()
 
+if v != 0 :
+    rst.append(str(v))
+
+print(''.join(rst))
 
