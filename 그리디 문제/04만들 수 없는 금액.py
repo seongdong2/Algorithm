@@ -1,13 +1,14 @@
-import sys
+#import sys
 #input = sys.stdin.readline
 n = int(input())
 array = list(map(int, input().split()))
+array.sort()
 
-big_num = 0
-for i in range(n) :
-    big_num += array[i]
+target = 1
+for x in array:
+    if target <x:
+        break
+    target += x
 
-print(big_num)
 
-
-
+print(target)
