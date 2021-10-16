@@ -1,39 +1,31 @@
-#'모든 도로의 거리가 1'이라는 조건 덕분에 너비 우선 탐색을 이용하여 간단히 해결할 수 있다.
-
+#모든 거리가 1이기 때문에 너비 탐색을 시작한다
 from collections import deque
 
+
+#도시 개수, 도로 개수, 거리 정보, 출발 도시 번호
 n, m, k, x = map(int, input().split())
-gragh = [[] for _ in range(n+1)]
 
-for _ in range(m):
+#A에서 B로 이동하는 단반향 도로 존재
+p = [[] for _ in range(n+1)]
+for i in range(m):
     a, b = map(int, input().split())
-    gragh[a].append(b)
+    p[a].append(b)
 
-#모든 도시에 대한 최단 거리 초기화
-
-distance = [-1] * (n+1)
+distance = [-1]*(n+1)
 distance[x] = 0
 
-q = deque([x])
-
+q=deque([x])
 while q :
     now = q.popleft()
-    for next_node in gragh[now] :
-        if distance[next_node] == -1 :
-            #최단 거리 갱신
-            distance[next_node] == distance[now] + 1
+    for next_node in p[now]:
+        if distance[next_node] == -1:
+            distance[next_node] = distance[now] + 1
             q.append(next_node)
 
-check = False
-for i in range(1, n+1):
-    if distance[i] == k :
-        print(i)
-        check = True
-
-if check == False :
-    print(-1)
 
 
+for i in range(n):
+    if distance[i] == k:
+        rst
 
-
-
+print(rst)

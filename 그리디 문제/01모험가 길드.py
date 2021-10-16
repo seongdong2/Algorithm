@@ -1,15 +1,16 @@
 n = int(input())
-array = list(map(int, input().split()))
-array.sort()
+members = list(map(int, input().split()))
+members.sort()
 
-
-count = result = 0
-for i in array :
-    result +=1
-    if result == i :
-        count += 1
-        result = 0
-
+group = 0
+max = 1
+for member in range(n) :
     
+    if max == members[member] :
+        max = 1
+        group += 1
+    else :
+        max += 1
 
-print(count)
+print(group)    
+    
