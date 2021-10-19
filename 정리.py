@@ -23,6 +23,7 @@ def bfs(gragh, start, visited):
                 queue.append(i)
                 visited[i] = True
 
+
 #선택정렬, O(N**2)
 array = []
 for i in range(len(array)) :
@@ -32,6 +33,7 @@ for i in range(len(array)) :
             min_index = j
     array[min_index], array[i] = array[i], array[min_index]
 
+
 #삽입정렬, O(N**2)
 for i in range(1, len(array)):
     for j in range(i, 0, -1) :
@@ -40,16 +42,30 @@ for i in range(1, len(array)):
         else :
             break
 
-#퀵 정렬, O(NlogN)            
+
+#퀵 정렬, O(NlogN)
 def q(array):
     if len(array) <= 1 :
         return array
     pivot = array[0] #피벗은 첫 번째 원소
     tail = array[1:] #피벗을 제외한 리스트
-    left_side = [x for x in tail if x <=pivot]
-    right_side = [x for x in tail if x > pivot]
+    left_side = [l for l in tail if l <=pivot]
+    right_side = [r for r in tail if r > pivot]
     
     return q(left_side) + [pivot] +q(right_side)
 
-        
+#계수정렬, O(N+K)
+def k(array):
+    count = [0]*(max(array) + 1)
+    #데이터를 인덱스로 저장하기
+    for i in range(len(array)):
+        count[array[i]] += 1
+    
+    #리스트 정보확인하기
+    for i in range(len(count)):
+        for j in range(count[i]):
+            print(i, end='')
+
+
+
 
