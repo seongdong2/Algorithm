@@ -1,13 +1,12 @@
 #1초 = 1,000,000,000 (10억)
 
 #DFS, O(N)
-def dfs(gragh, start, visited):
+#def dfs(gragh, start, visited):
     visited[start] = True
     for v in gragh[start] :
         #여기서 뭔가를 더 할 수 있음
         if not visited[v] :
             bfs(gragh, v, visited)
-
 
 #BFS, O(N)
 #DFS보다 빠른 탐색
@@ -23,7 +22,6 @@ def bfs(gragh, start, visited):
                 queue.append(i)
                 visited[i] = True
 
-
 #선택정렬, O(N**2)
 array = []
 for i in range(len(array)) :
@@ -33,7 +31,6 @@ for i in range(len(array)) :
             min_index = j
     array[min_index], array[i] = array[i], array[min_index]
 
-
 #삽입정렬, O(N**2)
 for i in range(1, len(array)):
     for j in range(i, 0, -1) :
@@ -41,7 +38,6 @@ for i in range(1, len(array)):
             array[j], array[j-1] = array[j-1], array[j]
         else :
             break
-
 
 #퀵 정렬, O(NlogN)
 def q(array):
@@ -66,6 +62,12 @@ def k(array):
         for j in range(count[i]):
             print(i, end='')
 
+#key
+array = [('바나나',2), ('사과', 5), ('당근', 3)]
+def setting(data):
+    return data[1]
+result = sorted(array, key=setting)
 
+#lamda
 
 
