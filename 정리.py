@@ -1,7 +1,7 @@
 #1초 = 1,000,000,000 (10억)
 
 #DFS, O(N)
-#def dfs(gragh, start, visited):
+def dfs(gragh, start, visited):
     visited[start] = True
     for v in gragh[start] :
         #여기서 뭔가를 더 할 수 있음
@@ -68,6 +68,36 @@ def setting(data):
     return data[1]
 result = sorted(array, key=setting)
 
-#lamda
+#hash
+def hash(participant, completion):
+    dict={}
+    for name in participant :
+        if dict.get(name):
+            dict[name] +=1
+        else:
+            dict[name] =1
+    
+    for name in completion:
+        dict[name] -= 1
+    
+    for key in dict :
+        if dict[key] > 0 :
+            return key
+
+
+#이진탐색, O(N)
+def bi(array, target, start, end):
+    while start <= end :
+        mid = (start + end) // 2
+        if array[mid] == target :
+            return mid
+        
+        elif array[mid] > target :
+            end = mid - 1
+        else :
+            start = mid + 1
+    return None
+
+
 
 
