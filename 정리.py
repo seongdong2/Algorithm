@@ -39,8 +39,8 @@ for i in range(1, len(array)):
         else :
             break
 
-#퀵 정렬, O(NlogN)
-def q(array):
+#퀵 정렬, O(NlogN) 
+def quick(array):
     if len(array) <= 1 :
         return array
     pivot = array[0] #피벗은 첫 번째 원소
@@ -51,7 +51,7 @@ def q(array):
     return q(left_side) + [pivot] +q(right_side)
 
 #계수정렬, O(N+K)
-def k(array):
+def count(array):
     count = [0]*(max(array) + 1)
     #데이터를 인덱스로 저장하기
     for i in range(len(array)):
@@ -84,7 +84,6 @@ def hash(participant, completion):
         if dict[key] > 0 :
             return key
 
-
 #이진탐색, O(N)
 def bi(array, target, start, end):
     while start <= end :
@@ -98,6 +97,40 @@ def bi(array, target, start, end):
             start = mid + 1
     return None
 
+#다이나믹프로그래밍 탑다운, O(N)
+d = [0]*100
+def DP(x):
+    if x ==1 or x==2:
+        return 1
+    if d[x] != 0:
+        return d[x]
+    d[x] = DP [x -1] + DP[x-2]
+    return d[x]
+
+#DP 보텀업, O(N)
+def DP2(n):
+    d=[0]*100
+    d[1] = 1
+    d[2] = 1
+
+    for i in range(3, n+1):
+        d[i] = d[i-1] + d[i-2]
+    
+    return d[n]
+
+#emumerate
+a= ['hong', 'gil', 'dong']
+b= []
+c= {}
+def enu(a, b, c):
+    for i, name in enumerate(a):
+        b.append((i,name))
+        c[i]=b[name]
 
 
+    
 
+    
+
+
+ 
