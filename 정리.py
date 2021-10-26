@@ -6,7 +6,7 @@ def dfs(gragh, start, visited):
     for v in gragh[start] :
         #여기서 뭔가를 더 할 수 있음
         if not visited[v] :
-            bfs(gragh, v, visited)
+            dfs(gragh, v, visited)
 
 #BFS, O(N)
 #DFS보다 빠른 탐색
@@ -39,6 +39,14 @@ for i in range(1, len(array)):
         else :
             break
 
+for i in range(1, len(array)):
+    for j in range(i, 0, -1):
+        if array[j] > array[j-1]:
+            array[j], array[j-1] = array[j-1], array[j]
+        else:
+            break
+
+
 #퀵 정렬, O(NlogN) 
 def quick(array):
     if len(array) <= 1 :
@@ -49,6 +57,8 @@ def quick(array):
     right_side = [r for r in tail if r > pivot]
     
     return q(left_side) + [pivot] +q(right_side)
+
+
 
 #계수정렬, O(N+K)
 def count(array):
@@ -61,6 +71,7 @@ def count(array):
     for i in range(len(count)):
         for j in range(count[i]):
             print(i, end='')
+
 
 #key
 array = [('바나나',2), ('사과', 5), ('당근', 3)]
@@ -84,6 +95,7 @@ def hash(participant, completion):
         if dict[key] > 0 :
             return key
 
+
 #이진탐색, O(N)
 def bi(array, target, start, end):
     while start <= end :
@@ -98,7 +110,7 @@ def bi(array, target, start, end):
     return None
 
 #다이나믹프로그래밍 탑다운, O(N)
-d = [0]*100
+#d = [0]*100
 def DP(x):
     if x ==1 or x==2:
         return 1
@@ -106,6 +118,7 @@ def DP(x):
         return d[x]
     d[x] = DP [x -1] + DP[x-2]
     return d[x]
+
 
 #DP 보텀업, O(N)
 def DP2(n):
@@ -117,6 +130,9 @@ def DP2(n):
         d[i] = d[i-1] + d[i-2]
     
     return d[n]
+
+
+
 
 #emumerate
 a= ['hong', 'gil', 'dong']
