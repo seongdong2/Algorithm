@@ -94,7 +94,7 @@ def hash(participant, completion):
     for key in dict :
         if dict[key] > 0 :
             return key
-
+    
 
 #이진탐색, O(N)
 def bi(array, target, start, end):
@@ -108,6 +108,8 @@ def bi(array, target, start, end):
         else :
             start = mid + 1
     return None
+
+
 
 #다이나믹프로그래밍 탑다운, O(N)
 #d = [0]*100
@@ -134,7 +136,7 @@ def DP2(n):
 
 
 
-#emumerate
+#enumerate
 a= ['hong', 'gil', 'dong']
 b= []
 c= {}
@@ -142,11 +144,6 @@ def enu(a, b, c):
     for i, name in enumerate(a):
         b.append((i,name))
         c[i]=b[name]
-
-
-    
-
-    
 
 
  

@@ -1,45 +1,38 @@
-#d[n] = max(d1[n-1], d2[n-1], d3[n-1])
-
-
-
-#1차원 리스트를 2차원 리스트로 만들기
-def make(array):
-    mining = []
-    count = 0
-    for i in range(1, n+1):
-        tmp = []
-        for j in range(1, m+1):
-            tmp.append(array[count])
-            count += 1
-        mining.append(tmp) 
-    return mining
-
-
-def dp(array):
-    d= [[0] * 20 for i in range(20)]
-    d[1][1] = 1
-    d[1][2] = 2
-    d[1][0] = 0
-    #dp 를 다음부터 하면 됌
-
-
-
-
-
-t = int(input())    
-while True:
-    if t == 0:
-        break
-
+for tc in range(int(int())):
     n, m = map(int, input().split())
     _list = list(map(int, input().split()))
-    mining = make(_list)
-    #딱 dp를 다음부터 하면 됌
 
+    dp = []
+    index = 0
 
+    #1차원 리스트를 2차원 리스트로 만들기
+    for i in range(n):
+        dp.append(_list[index:index + m])
+        index += m
+    
+    #dp
+    for j in range(1, m):
+        for i in range(n):
+            #왼쪽 위
+            if i == 0:
+                left_up = 0
+            else:
+                left_up = dp[i-1][j-1]
+            
+            #왼쪽 아래
+            if i == n-1:
+                left_donw = 0
+            else :
+                left_down = dp[i+1][j-1]
+            
+            #왼쪽
+            left = dp[i][j-1]
+            dp[i][j] = dp[i][j] + max(left, left_up, left_down)
+    #다 저장된 정보 중에 최대 수를 고른다
+    rst =0
+    for i in range(n):
+        rst = max(rst, dp[i][m-1])
 
-
-    print()
-    t -= 1
+    print(rst)
 
 
