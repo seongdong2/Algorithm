@@ -22,6 +22,7 @@ def bfs(gragh, start, visited):
                 queue.append(i)
                 visited[i] = True
 
+
 #선택정렬, O(N**2)
 array = []
 for i in range(len(array)) :
@@ -38,6 +39,7 @@ for i in range(1, len(array)):
             array[j], array[j-1] = array[j-1], array[j]
         else :
             break
+
 
 #퀵 정렬, O(NlogN) 
 def quick(array):
