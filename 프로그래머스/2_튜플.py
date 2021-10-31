@@ -2,24 +2,13 @@
 
 
 def solution(s):
-    answer = num(s)
-    #answer = []
-    return answer
-
-def num(x):
-    _num = []
-    list_num = []
+    answer = []
+    s=s[2:-2]
+    s=s.split('}.{')
+    for i in s:
+        ii = i.split(',')
+        for j in ii:
+            if int(j) not in answer :
+                answer.append(int(j))
     
-    for i in range(len(x)):
-        if x[i] == '{' or x[i] =='}':
-            continue
-        
-        if x[i] == ',' and x[i-1] == '}' and x[i+1]=='{' :
-                list_num.append(_num)
-                _num = []
-        
-        if x[i] != ',':
-            _num.append(int(x[i]))
-            
-    list_num.append(_num)
-    return list_num
+    return answer 
