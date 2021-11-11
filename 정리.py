@@ -40,16 +40,13 @@ for i in range(1, len(array)):
         else :
             break
 
-<<<<<<< HEAD
 for i in range(1, len(array)):
     for j in range(i, 0, -1):
         if array[j] > array[j-1]:
             array[j], array[j-1] = array[j-1], array[j]
         else:
             break
-
-=======
->>>>>>> 5afa297714be941bb636a1583240760aedfc8610
+#dfdf
 
 #퀵 정렬, O(NlogN) 
 def quick(array):
@@ -138,16 +135,21 @@ def DP2(n):
     return d[n]
 
 
-
-
-#enumerate
-a= ['hong', 'gil', 'dong']
-b= []
-c= {}
-def enu(a, b, c):
-    for i, name in enumerate(a):
-        b.append((i,name))
-        c[i]=b[name]
+#아라토스테네스의 채
+import math
+def aratos(n):
+    array = [True for i in range(n+1)]
+    
+    for i in range(2, int(math.sqrt(n))+1):
+        if array[i] == True :
+            j=2
+            while i*j <=n:
+                array[i*j]=False
+                j += 1
+    
+    for i in range(2, n+1):
+        if array[i]:
+            print(i, end =' ')
 
 
  
