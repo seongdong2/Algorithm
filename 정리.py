@@ -44,6 +44,16 @@ for i in range(1, len(array)):
         else :
             break
 
+<<<<<<< HEAD
+for i in range(1, len(array)):
+    for j in range(i, 0, -1):
+        if array[j] > array[j-1]:
+            array[j], array[j-1] = array[j-1], array[j]
+        else:
+            break
+#dfdf
+=======
+>>>>>>> main
 
 #퀵 정렬, O(NlogN) 
 def quick(array):
@@ -149,6 +159,10 @@ def aratos(n):
         if array[i]:
             print(i, end =' ')
 
+<<<<<<< HEAD
+=======
+#add
+>>>>>>> new3
 
  
 #pull test
