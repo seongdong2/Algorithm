@@ -157,5 +157,6 @@ def aratos(n):
         if array[i]:
             print(i, end =' ')
 
+#add
 
  
