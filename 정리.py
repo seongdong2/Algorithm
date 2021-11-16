@@ -8,6 +8,7 @@ def dfs(gragh, start, visited):
         if not visited[v] :
             dfs(gragh, v, visited)
 
+
 #BFS, O(N)
 #DFS보다 빠른 탐색
 from collections import deque
@@ -32,6 +33,7 @@ for i in range(len(array)) :
             min_index = j
     array[min_index], array[i] = array[i], array[min_index]
 
+
 #삽입정렬, O(N**2)
 for i in range(1, len(array)):
     for j in range(i, 0, -1) :
@@ -40,6 +42,7 @@ for i in range(1, len(array)):
         else :
             break
 
+<<<<<<< HEAD
 for i in range(1, len(array)):
     for j in range(i, 0, -1):
         if array[j] > array[j-1]:
@@ -47,6 +50,8 @@ for i in range(1, len(array)):
         else:
             break
 #dfdf
+=======
+>>>>>>> main
 
 #퀵 정렬, O(NlogN) 
 def quick(array):
@@ -58,6 +63,7 @@ def quick(array):
     right_side = [r for r in tail if r > pivot]
     
     return q(left_side) + [pivot] +q(right_side)
+
 
 
 
@@ -113,7 +119,7 @@ def bi(array, target, start, end):
 
 
 #다이나믹프로그래밍 탑다운, O(N)
-#d = [0]*100
+d = [0]*100
 def DP(x):
     if x ==1 or x==2:
         return 1
