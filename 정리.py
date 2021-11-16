@@ -160,7 +160,10 @@ def aratos(n):
             print(i, end =' ')
 
 <<<<<<< HEAD
+
 =======
+
+
 #add
 >>>>>>> new3
 
