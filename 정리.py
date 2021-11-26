@@ -113,6 +113,13 @@ def bi(array, target, start, end):
 
 
 
+#heap 정렬, O(NlogN)
+
+
+
+
+
+
 
 
 
@@ -126,21 +133,6 @@ def DP(x):
         return d[x]
     d[x] = DP [x -1] + DP[x-2]
     return d[x]
-
-
-d = [0]*100
-def DP(x):
-    if x==1 or x==2:
-        return 1
-    if d[x] != 0:
-        return d[x]
-    d[x] = DP[x-1] + DP[x-2]
-    return d[x]
-    
-
-
-
-
 
 
 #DP 보텀업, O(N)
@@ -171,4 +163,3 @@ def aratos(n):
         if array[i]:
             print(i, end =' ')
 
-#add
