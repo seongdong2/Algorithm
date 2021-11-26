@@ -9,8 +9,6 @@ def dfs(gragh, start, visited):
             dfs(gragh, v, visited)
 
 
-
-
 #BFS, O(N)
 #DFS보다 빠른 탐색
 from collections import deque
@@ -37,6 +35,8 @@ for i in range(len(array)) :
     array[min_index], array[i] = array[i], array[min_index]
 
 
+
+
 #삽입정렬, O(N**2)
 for i in range(1, len(array)):
     for j in range(i, 0, -1) :
@@ -44,6 +44,8 @@ for i in range(1, len(array)):
             array[j], array[j-1] = array[j-1], array[j]
         else :
             break
+
+
 
 
 #퀵 정렬, O(NlogN) 
@@ -56,7 +58,6 @@ def quick(array):
     right_side = [r for r in tail if r > pivot]
     
     return q(left_side) + [pivot] +q(right_side)
-
 
 
 
@@ -78,6 +79,7 @@ array = [('바나나',2), ('사과', 5), ('당근', 3)]
 def setting(data):
     return data[1]
 result = sorted(array, key=setting)
+
 
 #hash
 def hash(participant, completion):
@@ -111,6 +113,10 @@ def bi(array, target, start, end):
 
 
 
+
+
+
+
 #다이나믹프로그래밍 탑다운, O(N)
 d = [0]*100
 def DP(x):
@@ -120,6 +126,21 @@ def DP(x):
         return d[x]
     d[x] = DP [x -1] + DP[x-2]
     return d[x]
+
+
+d = [0]*100
+def DP(x):
+    if x==1 or x==2:
+        return 1
+    if d[x] != 0:
+        return d[x]
+    d[x] = DP[x-1] + DP[x-2]
+    return d[x]
+    
+
+
+
+
 
 
 #DP 보텀업, O(N)
@@ -151,12 +172,3 @@ def aratos(n):
             print(i, end =' ')
 
 #add
-
- 
-#pull test
-
-
-
-#push test
-#testgit
-#test2
